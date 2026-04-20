@@ -1,0 +1,207 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>WAVEE COFFEE — Café de alta calidad</title>
+<meta name="description" content="WAVEE COFFEE — Café de alta calidad"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@300;400&family=Montserrat:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;border:none;cursor:pointer;background:transparent;color:inherit}
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:1;opacity:0.025;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+@keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+@keyframes widen{from{width:0}to{width:100%}}
+@keyframes slideLeft{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:translateX(0)}}
+@keyframes scaleIn{from{opacity:0;transform:scale(0.96)}to{opacity:1;transform:scale(1)}}
+.reveal{opacity:0;animation:rise .9s cubic-bezier(.2,.8,.2,1) forwards}
+.reveal.d1{animation-delay:.1s}
+.reveal.d2{animation-delay:.25s}
+.reveal.d3{animation-delay:.4s}
+.reveal.d4{animation-delay:.55s}
+.reveal.d5{animation-delay:.7s}
+.scroll-reveal{opacity:0;transform:translateY(32px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.scroll-reveal.visible{opacity:1;transform:translateY(0)}
+
+:root{--bg:#faf6f0;--surface:#ffffff;--text:#2c2418;--muted:#8a7a68;--accent:#8b5e3c;--accent-soft:rgba(139,94,60,0.1);--border:#e8ddd0;--font-d:'Cormorant Garamond',serif;--font-b:'Inter',sans-serif}
+body{font-family:var(--font-b);background:var(--bg);color:var(--text);font-size:17px;line-height:1.6;font-weight:300}
+h1,h2,h3,h4{font-family:var(--font-d);font-weight:400;letter-spacing:-0.02em;line-height:1.08}
+nav{padding:40px 0;position:absolute;top:0;left:0;right:0;z-index:10}
+nav .in{display:flex;justify-content:space-between;align-items:center;max-width:1280px;margin:0 auto;padding:0 48px}
+.logo{font-family:var(--font-d);font-size:20px;font-weight:400;letter-spacing:-0.01em}
+.nav-links{display:flex;gap:40px;font-family:var(--font-b);font-size:14px;color:var(--muted)}
+.nav-links a:hover{color:var(--text)}
+nav .cta{font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text);border-bottom:1px solid var(--text);padding-bottom:4px;transition:all .3s}
+nav .cta:hover{color:var(--accent);border-color:var(--accent)}
+@media(max-width:768px){nav{padding:24px 0}nav .in{padding:0 24px}.nav-links{display:none}.logo{font-size:17px}}
+.hero{min-height:100vh;display:flex;align-items:center;padding:100px 0}
+.hero-g{max-width:1280px;margin:0 auto;padding:0 48px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;width:100%}
+.hero-l .tag{display:block;font-family:var(--font-b);font-size:13px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:40px}
+.hero-l h1{font-size:clamp(48px,6vw,80px);margin-bottom:40px;font-weight:300}
+.hero-l h1 em{font-style:italic;font-weight:400;color:var(--accent)}
+.hero-l .lead{font-size:19px;color:var(--muted);line-height:1.7;max-width:520px;margin-bottom:56px;font-weight:300}
+.hero-cta{display:flex;gap:32px;align-items:center;flex-wrap:wrap}
+.btn-line{font-family:var(--font-b);font-size:14px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text);padding-bottom:6px;border-bottom:1px solid var(--text);transition:all .3s}
+.btn-line:hover{color:var(--accent);border-color:var(--accent);padding-left:8px}
+.btn-fill{font-family:var(--font-b);font-size:14px;letter-spacing:0.1em;text-transform:uppercase;color:#fff;background:var(--text);padding:18px 36px;border-radius:999px;transition:all .3s}
+.btn-fill:hover{background:var(--accent);transform:translateY(-2px)}
+.hero-r{position:relative}
+.hero-r img{width:100%;aspect-ratio:4/5;object-fit:cover}
+@media(max-width:968px){.hero-g{grid-template-columns:1fr;gap:48px;padding:0 24px}.hero-r img{aspect-ratio:16/10}}
+section{padding:160px 0}
+.sec-in{max-width:1280px;margin:0 auto;padding:0 48px}
+@media(max-width:968px){section{padding:100px 0}.sec-in{padding:0 24px}}
+.minimalist-row{display:grid;grid-template-columns:1fr 1fr;gap:120px;align-items:end;margin-bottom:100px}
+.sec-k{font-family:var(--font-b);font-size:12px;letter-spacing:0.25em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.sec-title{font-size:clamp(40px,5vw,64px);font-weight:300;line-height:1.05;margin:0}
+.sec-p{font-size:18px;color:var(--muted);line-height:1.75;max-width:480px;font-weight:300}
+@media(max-width:968px){.minimalist-row{grid-template-columns:1fr;gap:40px}}
+.svc-m{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--border)}
+.svc-m .it{padding:48px 0;border-bottom:1px solid var(--border);display:grid;grid-template-columns:80px 1fr;gap:32px;align-items:start;transition:all .4s}
+.svc-m .it:nth-child(odd){padding-right:48px;border-right:1px solid var(--border)}
+.svc-m .it:nth-child(even){padding-left:48px}
+.svc-m .it:hover{background:var(--accent-soft)}
+.svc-m .num{font-family:var(--font-d);font-size:48px;color:var(--accent);font-weight:300}
+.svc-m h3{font-size:22px;margin-bottom:14px;font-weight:400}
+.svc-m p{color:var(--muted);font-size:15px;line-height:1.7;font-weight:300}
+@media(max-width:768px){.svc-m{grid-template-columns:1fr}.svc-m .it{padding:32px 0!important;border-right:none!important}.svc-m .it:nth-child(even){padding-left:0}}
+.diff-m{text-align:center}
+.diff-m .sec-title{max-width:760px;margin:0 auto 32px}
+.diff-m .sec-p{max-width:620px;margin:0 auto 100px}
+.diff-l{display:grid;grid-template-columns:repeat(3,1fr);gap:80px;text-align:left}
+.diff-l .it{padding-top:32px;border-top:1px solid var(--border)}
+.diff-l .num{font-family:var(--font-d);font-size:15px;letter-spacing:0.2em;color:var(--accent);margin-bottom:28px;font-weight:400}
+.diff-l h3{font-size:22px;margin-bottom:16px;font-weight:400}
+.diff-l p{color:var(--muted);font-size:15px;line-height:1.75;font-weight:300}
+@media(max-width:768px){.diff-l{grid-template-columns:1fr;gap:40px}}
+.contact-m{text-align:center}
+.contact-m .sec-title{max-width:640px;margin:0 auto 32px}
+.contact-m .sec-p{max-width:580px;margin:0 auto 64px}
+.ct-row{display:flex;gap:48px;justify-content:center;flex-wrap:wrap;margin-bottom:72px;padding-top:40px;border-top:1px solid var(--border)}
+.ct-itm{text-align:left}
+.ct-ky{font-family:var(--font-b);font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.ct-vl{font-family:var(--font-d);font-size:20px;color:var(--text);font-weight:400}
+.ct-vl:hover{color:var(--accent)}
+footer.m{padding:60px 0 40px;border-top:1px solid var(--border)}
+footer.m .in{max-width:1280px;margin:0 auto;padding:0 48px;display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap}
+footer.m .br{font-family:var(--font-d);font-size:24px;font-weight:400}
+footer.m .meta{display:flex;gap:32px;font-family:var(--font-b);font-size:13px;color:var(--muted)}
+@media(max-width:768px){footer.m .in{padding:0 24px;flex-direction:column;align-items:flex-start}}
+</style></head><body>
+<nav><div class="in">
+<span class="logo">WAVEE COFFEE</span>
+<div class="nav-links"><a href="#servicios">Servicios</a><a href="#enfoque">Enfoque</a><a href="#contacto">Contacto</a></div>
+<a href="https://wa.me/5491121796254" target="_blank" rel="noopener" class="cta">Reservar</a>
+</div></nav>
+<section class="hero"><div class="hero-g">
+<div class="hero-l">
+<span class="tag reveal">Cocina</span>
+<h1 class="reveal d1">Café de alta <em>calidad</em></h1>
+<p class="lead reveal d2">WAVEE COFFEE es una cafetería ubicada en el corazón de la Ciudad Autónoma de Buenos Aires, donde se ofrece una amplia variedad de especialidades de café y productos de repostería artesanal. Nuestro objetivo es brindar un espacio acogedor y sofisticado para que nuestros clientes disfruten de un momento de relax y buen gusto.</p>
+<div class="hero-cta reveal d3">
+  <a href="https://wa.me/5491121796254" target="_blank" rel="noopener" class="btn-fill">Reservar</a>
+  <a href="tel:01121796254" class="btn-line">Llamar ahora →</a>
+</div>
+</div>
+<div class="hero-r reveal d4"><img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=1600&q=80&auto=format&fit=crop" alt="WAVEE COFFEE"/></div>
+</div></section>
+<section id="servicios" class="scroll-reveal"><div class="sec-in">
+<div class="minimalist-row">
+<div><div class="sec-k">— Servicios</div><h2 class="sec-title">Lo que ofrecemos</h2></div>
+<div><p class="sec-p">Cada servicio se entrega con atención al detalle y criterio profesional.</p></div>
+</div>
+<div class="svc-m">
+<div class="it scroll-reveal" style="transition-delay:0ms">
+<div class="num">01</div>
+<div><h3>Café especial</h3><p>Preparado con granos de alta calidad y técnicas de extracción precisas para obtener el máximo sabor y aroma</p></div>
+</div><div class="it scroll-reveal" style="transition-delay:50ms">
+<div class="num">02</div>
+<div><h3>Tostado artesanal</h3><p>Nuestros granos de café son tostados en pequeñas cantidades para garantizar la frescura y el sabor característico de cada variedad</p></div>
+</div><div class="it scroll-reveal" style="transition-delay:100ms">
+<div class="num">03</div>
+<div><h3>Repostería casera</h3><p>Nuestros pasteles y facturas son elaborados diariamente con ingredientes frescos y naturales para acompañar perfectamente tu café</p></div>
+</div><div class="it scroll-reveal" style="transition-delay:150ms">
+<div class="num">04</div>
+<div><h3>Desayuno ligero</h3><p>Ofrecemos una variedad de opciones saludables y deliciosas para comenzar el día, desde tostadas hasta yogur con granola</p></div>
+</div><div class="it scroll-reveal" style="transition-delay:200ms">
+<div class="num">05</div>
+<div><h3>Meriendas y snacks</h3><p>Nuestro menú incluye una selección de opciones para satisfacer tu antojo en cualquier momento del día, desde sandwiches hasta frutas frescas</p></div>
+</div><div class="it scroll-reveal" style="transition-delay:250ms">
+<div class="num">06</div>
+<div><h3>Eventos y catering</h3><p>Nuestro equipo puede ayudarte a planificar y ejecutar eventos y reuniones en nuestro local o en el lugar de tu preferencia, con opciones personalizadas de comida y bebida</p></div>
+</div>
+</div></div></section>
+<section id="enfoque" class="diff-m scroll-reveal"><div class="sec-in">
+<div class="sec-k">— Enfoque</div>
+<h2 class="sec-title">Nuestro modo de trabajar</h2>
+<p class="sec-p">Tres principios definen el criterio con el que acompañamos cada proyecto.</p>
+<div class="diff-l">
+<div class="it scroll-reveal" style="transition-delay:0ms">
+<div class="num">01 / 03</div>
+<h3>Calidad garantizada</h3>
+<p>Nuestros productos son seleccionados y preparados con el máximo cuidado para garantizar la calidad y el sabor en cada una de nuestras ofertas</p>
+</div><div class="it scroll-reveal" style="transition-delay:100ms">
+<div class="num">02 / 03</div>
+<h3>Ambiente acogedor</h3>
+<p>Nuestro local ha sido diseñado para brindar un espacio cómodo y elegante, ideal para trabajar, estudiar o simplemente disfrutar de un momento de relax</p>
+</div><div class="it scroll-reveal" style="transition-delay:200ms">
+<div class="num">03 / 03</div>
+<h3>Atención personalizada</h3>
+<p>Nuestro equipo está capacitado para brindar una atención cálida y personalizada, asegurándose de que cada cliente se sienta bienvenido y satisfecho</p>
+</div>
+</div></div></section>
+<section id="contacto" class="contact-m scroll-reveal"><div class="sec-in">
+<div class="sec-k">— Contacto</div>
+<h2 class="sec-title">Conversemos</h2>
+<p class="sec-p">Estamos a disposición para escuchar tu consulta y coordinar un primer encuentro.</p>
+<div class="ct-row">
+<a href="tel:01121796254" class="ct-itm"><div class="ct-ky">Teléfono</div><div class="ct-vl">01121796254</div></a>
+<a href="https://maps.google.com/?q=WAVEE%20COFFEE%20Marcos%20Paz%203455%2C%20C1417%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires%2C%20Argentina" target="_blank" rel="noopener" class="ct-itm"><div class="ct-ky">Dirección</div><div class="ct-vl">Marcos Paz 3455, C1417 Cdad. Autónoma de Buenos Aires, Argentina</div></a>
+</div>
+<a href="https://wa.me/5491121796254" target="_blank" rel="noopener" class="btn-fill">Escribinos por WhatsApp</a>
+</div></section>
+<footer class="m"><div class="in">
+<div class="br">WAVEE COFFEE</div>
+<div class="meta"><span>Cafetería</span><span>01121796254</span></div>
+</div></footer>
+<div class="eterlab-credit">
+  <div class="eterlab-credit-inner">
+    <p>©2026 | diseñado y desarrollado por <a href="https://eterlab.co/" target="_blank" rel="noreferrer">eterlab.</a></p>
+  </div>
+</div>
+<style>
+.eterlab-credit{background:#212121}
+.eterlab-credit-inner{max-width:1536px;margin:0 auto;padding:8px 16px}
+.eterlab-credit p{text-align:center;font-size:12px;color:rgba(255,255,255,0.8);font-family:'Montserrat',sans-serif;font-weight:400;margin:0;letter-spacing:0.01em}
+.eterlab-credit a{font-style:italic;color:rgba(255,255,255,0.9);transition:color .2s;text-decoration:none;font-weight:500}
+.eterlab-credit a:hover{color:#fff}
+</style><a href="https://wa.me/5491121796254" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp">
+<svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+<style>
+.wa-float{position:fixed;bottom:24px;right:24px;z-index:99;width:56px;height:56px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 32px rgba(37,211,102,0.35);transition:all .3s cubic-bezier(.2,.8,.2,1)}
+.wa-float:hover{transform:scale(1.08) rotate(-5deg);box-shadow:0 20px 40px rgba(37,211,102,0.45)}
+.wa-float svg{width:28px;height:28px;fill:#fff}
+</style><script>
+(function(){
+  if (!('IntersectionObserver' in window)) {
+    document.querySelectorAll('.scroll-reveal').forEach(el => el.classList.add('visible'));
+    return;
+  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.scroll-reveal').forEach(el => io.observe(el));
+})();
+</script>
+</body></html>
