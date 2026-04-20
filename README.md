@@ -1,2 +1,7 @@
-# demo-wavee-coffee
-Demo web para WAVEE COFFEE — diseñada por eterlab.
+# WAVEE COFFEE
+
+Sitio web demo diseñado por [eterlab.](https://eterlab.co)
+
+## Editar
+
+Modificá `index.html` para personalizar el sitio.
